@@ -12,7 +12,7 @@ The script implements the following functionalities.
 
 ### CRUD Operation on MongoDB
 
-python RestAPI.py
+python MongoDB_Crud_Rest.py
 
 The script implements the following functionalities.
 		Create a Record into a MongoDB Collection
