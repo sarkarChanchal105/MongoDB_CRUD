@@ -1,0 +1,60 @@
+#### MongoDB CRUD operation ###
+
+
+### Create Operation
+curl -d '{ "student_id" : 200, "type" : "exam", "score" : 30.590118948104816 }' -H "Content-Type: application/json" -X POST 127.0.0.1:5000/api
+
+## Query the newly added data
+curl 127.0.0.1:5000/api/200
+{
+  "data": {
+    "score": 30.590118948104816,
+    "student_id": 200,
+    "type": "exam"
+  },
+  "status": "ok"
+}
+
+Observation: New Record for the student_id 200 has been created
+
+### Read Operation
+curl 127.0.0.1:5000/api/200
+{
+  "data": {
+    "score": 30.590118948104816,
+    "student_id": 200,
+    "type": "exam"
+  },
+  "status": "ok"
+}
+
+Observation: New Record for the student_id 200 has been created
+
+### Update Operation
+curl -d '{ "student_id" : 200, "type" : "exam", "score" : 560 }' -H "Content-Type: application/json" -X PUT 127.0.0.1:5000/api/200
+## Query the updated data
+curl  127.0.0.1:5000/api/200
+{
+  "data": {
+    "score": 560,
+    "student_id": 200,
+    "type": "exam"
+  },
+  "status": "ok"
+}
+
+Observation: The Score for the student_id 200 has been updated to 560.
+
+### Delete Operation
+curl -X Delete 127.0.0.1:5000/api/200
+
+## Query the deleted data
+curl  127.0.0.1:5000/api/200
+{
+    "response": "no record found for student_id 200"
+}
+
+Observation: The record has been deleted.
+
+
+
