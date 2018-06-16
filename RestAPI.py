@@ -2,10 +2,16 @@
 """
 REST Interface in python that Provides CRUD operations on MonogoDB collection.
 
-Th script assumes that you have up and running mongoDB instance running on the default port in
+The script has been developed using python 3.6.0
+
+The script assumes that you have up and running mongoDB instance running on the default port in
 your local system. Further, the mongoDB has a database named "school" and a collection named "scores"
 
-Please find the dump of the collection in the folder "School"
+Please find the dump of the collection in the folder "School".
+
+You may use this dump to import the collection into you local database "school". Here is an example,
+
+mongorestore --collection scores  --db school "school/scores.bson"
 
 """
 
@@ -50,11 +56,11 @@ class school(Resource):
                 return {"response": "no record found for student_id {}".format(student_id)}
 
         else:
+            ## if you dont specify he student_id, it will show first 10 records
             cursor = mongo.db.scores.find({}, {"_id": 0}).limit(10)
 
             for student in cursor:
                 print (student)
-                #student['url'] = APP_URL + url_for('students') + "/" + student.get('registration')
                 data.append(student)
 
             return jsonify({"response": data})
