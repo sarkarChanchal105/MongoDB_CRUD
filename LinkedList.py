@@ -1,3 +1,10 @@
+"""
+
+Simple linked list class
+The script has been developed using python 3.6.0
+
+"""
+
 ## Class to define a Node
 class Node:
     def __init__(self,val):
@@ -70,7 +77,7 @@ class LinkedList:
 print("Create the linked List..")
 lnkdlist = LinkedList() ## Create a Linked List Object
 print("Insert data into Linked List")
-for i in range(9):  ## insert 10 numbers into the list list
+for i in range(10):  ## insert 10 numbers into the list list
     lnkdlist.insert(i)
 lnkdlist.printList() ## Print the linked list
 
@@ -82,6 +89,6 @@ lnkdlist.printList() ## Print the linked list
 
 
 print("Afer Deleting by Value.......")
-lnkdlist.find_and_delete(5)  ## Delete the node in position
+lnkdlist.find_and_delete(5)  ## Find the node by value and delete it.
 lnkdlist.printList() ## Print the linked list
 
